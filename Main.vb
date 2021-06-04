@@ -5,6 +5,8 @@ Public Class Main
     Private Declare Function GetSystemMetrics Lib "user32" (ByVal nIndex As Long) As Long
     Private Const SM_CLEANBOOT = 67
 
+    Const ApplicationTitle = "Windows Terminal Remover"
+
     Function GetBootMode() As String
         Select Case GetSystemMetrics(SM_CLEANBOOT)
             Case 1 : Return "SafeMode"
@@ -55,6 +57,7 @@ Public Class Main
             Step2.Enabled = True
         End If
 
-        MsgBox("Greetings!" & vbNewLine & vbNewLine & "It is VERY important that you read the information on Step 1 and Step 2 before you begin.", vbInformation)
+        MsgBox("Greetings!" & vbNewLine & vbNewLine & "It is VERY important that you read the information on Step 1 and Step 2 before you begin.", vbInformation, ApplicationTitle)
     End Sub
+
 End Class

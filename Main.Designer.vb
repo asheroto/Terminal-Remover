@@ -34,10 +34,10 @@ Partial Class Main
         'Step1
         '
         Me.Step1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Step1.Location = New System.Drawing.Point(474, 31)
+        Me.Step1.Location = New System.Drawing.Point(494, 31)
         Me.Step1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Step1.Name = "Step1"
-        Me.Step1.Size = New System.Drawing.Size(217, 51)
+        Me.Step1.Size = New System.Drawing.Size(197, 51)
         Me.Step1.TabIndex = 0
         Me.Step1.Text = "Step 1"
         Me.Step1.UseVisualStyleBackColor = True
@@ -45,10 +45,10 @@ Partial Class Main
         'Step2
         '
         Me.Step2.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Step2.Location = New System.Drawing.Point(474, 138)
+        Me.Step2.Location = New System.Drawing.Point(494, 138)
         Me.Step2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Step2.Name = "Step2"
-        Me.Step2.Size = New System.Drawing.Size(217, 51)
+        Me.Step2.Size = New System.Drawing.Size(197, 51)
         Me.Step2.TabIndex = 1
         Me.Step2.Text = "Step 2"
         Me.Step2.UseVisualStyleBackColor = True
@@ -68,11 +68,9 @@ Partial Class Main
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(14, 31)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(378, 68)
+        Me.Label2.Size = New System.Drawing.Size(453, 68)
         Me.Label2.TabIndex = 3
-        Me.Label2.Text = "- Your settings.json file will be backed up to your desktop" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Windows will reboo" &
-    "t into Safe Mode with Networking" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Please launch Terminal-Remover.exe again onc" &
-    "e in Safe Mode" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Run Step 2"
+        Me.Label2.Text = resources.GetString("Label2.Text")
         '
         'Label3
         '
