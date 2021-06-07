@@ -18,3 +18,7 @@ Just open it up and read! 😀
 # Screenshot
 
 ![Main Window](https://github.com/asheroto/Terminal-Remover/blob/master/screenshots/1.png)
+
+# Final Thought
+
+If you're still having trouble getting Windows Terminal installed and don't want to mess with it any longer, consider using [Terminal-Portable](https://github.com/asheroto/Terminal-Portable).
