@@ -118,9 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Step1" xml:space="preserve">
-    <value>Get-ChildItem "$ENV:LOCALAPPDATA\Packages\*WindowsTerminal*" -Recurse -Filter "settings.json" | Copy-Item -Destination $ENV:USERPROFILE\Desktop\settings_backup.json -Force;bcdedit /set "{current}" safeboot network;shutdown /f /r /t 0</value>
+    <value>Get-ChildItem "$ENV:LOCALAPPDATA\Packages\*WindowsTerminal*" -Recurse -Filter "settings.json" | ForEach-Object { Copy-Item $_.FullName -Destination "$ENV:USERPROFILE\Desktop\settings_backup_$((Get-Date).ToFileTime()).json" -Force }; bcdedit /set "{current}" safeboot network; shutdown /f /r /t 0</value>
   </data>
   <data name="Step2" xml:space="preserve">
-    <value>Get-AppxPackage *WindowsTerminal* | Remove-AppxPackage -Force;$fontKey = "HKCU:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts\*WindowsTerminal*";Get-Item $fontKey | Remove-Item -Force;$tf = "$ENV:ProgramFiles\WindowsApps\*WindowsTerminal*";$loc = Get-Item $tf;foreach($item in $loc) { takeown /F $item /A /R /D Y;icacls $item /grant:r everyone:F /T;Remove-Item $item -Force -Recurse; } bcdedit /deletevalue "{current}" safeboot;shutdown /f /r /t 0;</value>
+    <value>Get-AppxPackage *WindowsTerminal* -AllUsers | Remove-AppxPackage -AllUsers -ErrorAction SilentlyContinue; Get-Item "HKCU:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts\*WindowsTerminal*" | Remove-Item -Force; Get-Item "$ENV:ProgramFiles\WindowsApps\*WindowsTerminal*" | % { takeown /F $_.FullName /A /R /D Y; icacls $_.FullName /grant:r everyone:F /T; Remove-Item $_.FullName -Force -Recurse }; bcdedit /deletevalue "{current}" safeboot; shutdown /f /r /t 0</value>
   </data>
 </root>

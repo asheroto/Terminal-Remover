@@ -123,6 +123,13 @@
 - Please launch Terminal-Remover.exe again once in Safe Mode
 - Run Step 2</value>
   </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>- The easiest way to install Windows Terminal is with "winget"
+- Use PowerShell as Administrator for the following:
+- Install "winget" using "Install-Script winget-install -Force"
+- Then run "winget-install"
+- Then run "winget install Microsoft.WindowsTerminal"</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

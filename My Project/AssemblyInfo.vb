@@ -10,9 +10,9 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("Terminal-Remover")>
 <Assembly: AssemblyDescription("Removes Windows Terminal completely.")>
-<Assembly: AssemblyCompany("asher.tools")>
+<Assembly: AssemblyCompany("asheroto")>
 <Assembly: AssemblyProduct("Terminal-Remover")>
-<Assembly: AssemblyCopyright("Copyright © 2020-2021 asher.tools")>
+<Assembly: AssemblyCopyright("GPL-3.0 license")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("0.0.1.0")>
-<Assembly: AssemblyFileVersion("0.0.1.0")>
+<Assembly: AssemblyVersion("1.0.0.0")>
+<Assembly: AssemblyFileVersion("1.0.0.0")>

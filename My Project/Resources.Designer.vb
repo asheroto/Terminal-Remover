@@ -22,7 +22,7 @@ Namespace My.Resources
     '''<summary>
     '''  A strongly-typed resource class, for looking up localized strings, etc.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0"),  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
@@ -61,7 +61,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Get-ChildItem &quot;$ENV:LOCALAPPDATA\Packages\*WindowsTerminal*&quot; -Recurse -Filter &quot;settings.json&quot; | Copy-Item -Destination $ENV:USERPROFILE\Desktop\settings_backup.json -Force;bcdedit /set &quot;{current}&quot; safeboot network;shutdown /f /r /t 0.
+        '''  Looks up a localized string similar to Get-ChildItem &quot;$ENV:LOCALAPPDATA\Packages\*WindowsTerminal*&quot; -Recurse -Filter &quot;settings.json&quot; | ForEach-Object { Copy-Item $_.FullName -Destination &quot;$ENV:USERPROFILE\Desktop\settings_backup_$((Get-Date).ToFileTime()).json&quot; -Force }; bcdedit /set &quot;{current}&quot; safeboot network; shutdown /f /r /t 0.
         '''</summary>
         Friend ReadOnly Property Step1() As String
             Get
@@ -70,7 +70,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Get-AppxPackage *WindowsTerminal* | Remove-AppxPackage -Force;$fontKey = &quot;HKCU:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts\*WindowsTerminal*&quot;;Get-Item $fontKey | Remove-Item -Force;$tf = &quot;$ENV:ProgramFiles\WindowsApps\*WindowsTerminal*&quot;;$loc = Get-Item $tf;foreach($item in $loc) { takeown /F $item /A /R /D Y;icacls $item /grant:r everyone:F /T;Remove-Item $item -Force -Recurse; } bcdedit /deletevalue &quot;{current}&quot; safeboot;shutdown /f /r /t 0;.
+        '''  Looks up a localized string similar to Get-AppxPackage *WindowsTerminal* -AllUsers | Remove-AppxPackage -AllUsers -ErrorAction SilentlyContinue; Get-Item &quot;HKCU:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts\*WindowsTerminal*&quot; | Remove-Item -Force; Get-Item &quot;$ENV:ProgramFiles\WindowsApps\*WindowsTerminal*&quot; | % { takeown /F $_.FullName /A /R /D Y; icacls $_.FullName /grant:r everyone:F /T; Remove-Item $_.FullName -Force -Recurse }; bcdedit /deletevalue &quot;{current}&quot; safeboot; shutdown /f /r /t 0.
         '''</summary>
         Friend ReadOnly Property Step2() As String
             Get
